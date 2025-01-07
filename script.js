@@ -51,7 +51,7 @@ function userPress(btn){
     btnFlash(this);
     ans = this.classList[1];
     userSeq.push(ans);
-    console.log(userSeq);
+    // console.log(userSeq);
     checkAns(userSeq.length-1);
 
 }
@@ -61,11 +61,10 @@ for (btn of btnClass){
     btn.addEventListener("click",userPress);
 }
  function checkAns(idx){
-    console.log(`curent lvl : ${lvl}`)
+    // console.log(`curent lvl : ${lvl}`)
     if (userSeq[idx] == gameSeq[idx]){
         if (userSeq.length == gameSeq.length){
-            console.log("Equal");
-            // userSeq = [];
+            // console.log("Equal");
             setTimeout(lvlup,500);
         }
     }else{
