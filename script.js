@@ -52,7 +52,9 @@ function userPress(btn){
     ans = this.classList[1];
     userSeq.push(ans);
     // console.log(userSeq);
-    checkAns(userSeq.length-1);
+    if (gameSeq.length > 0){
+        checkAns(userSeq.length-1);
+    }
 
 }
 
@@ -66,12 +68,18 @@ for (btn of btnClass){
         if (userSeq.length == gameSeq.length){
             // console.log("Equal");
             setTimeout(lvlup,500);
+            if (lvl%10==0){
+                document.querySelector("body").style.backgroundColor = "rgb(115, 224, 115)";
+                setTimeout(()=>{
+                    document.querySelector("body").style.backgroundColor = "white";
+                },200)
+                    } 
         }
     }else{
         h3.innerHTML = `Game Over! <br> Your Score : ${lvl-1}`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(()=>{
-            document.querySelector("body").style.backgroundColor = "white";
+            document.querySelector("body").style.backgroundColor = "white"
         },200)
         
     }
