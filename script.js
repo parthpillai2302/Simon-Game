@@ -80,7 +80,9 @@ for (btn of btnClass){
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(()=>{
             document.querySelector("body").style.backgroundColor = "white"
-        },200)
-        
+        },200);
+        lvl = 0;
+        gameSeq = [];
+        started = false;
     }
  }
